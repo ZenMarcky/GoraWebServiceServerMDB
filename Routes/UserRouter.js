@@ -6,6 +6,8 @@ const {sign} = require('jsonwebtoken');
 const { validateToken } = require('../middleware/AuthMiddleware');
 
 
+
+
 router.get('/', validateToken ,async (request,response)=>{
    if(request.user.isAdmin){
     let getAllUser = await User.find();
